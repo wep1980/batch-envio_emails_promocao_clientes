@@ -5,7 +5,7 @@ public class Produto {
     private int id;
     private String nome;
     private String descricao;
-    private Double valor;
+    private Double preco;
 
 
     public int getId() {
@@ -32,11 +32,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public Double getValor() {
-        return valor;
+    public Double getPreco() {
+        return preco;
     }
 
-    public void setValor(Double valor) {
-        this.valor = valor;
+    public void setPreco(Double preco) {
+        this.preco = preco;
     }
 }
