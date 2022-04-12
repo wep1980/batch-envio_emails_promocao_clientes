@@ -21,6 +21,13 @@ public class ProcessarEmailProdutoClienteProcessor implements ItemProcessor<Inte
         email.setTo(interesseProdutoCliente.getCliente().getEmail());
         email.setSubject("Promoção imperdível!!!!");
         email.setText(gerarTextoPromocao(interesseProdutoCliente));
+
+        /*
+        Ao utilizar o serviço de email https://mailtrap.io/inboxes/1693244/messages que e gratuito, não possivel varios emails ao mesmo tempo,
+        para resolver o problema esta sendo utilizado um sleep para acontecer um intervalo de tempo de 2 segundos em cada processamento de email.
+         */
+        Thread.sleep(2000); // 2 segundos
+
         return email;
     }
 
